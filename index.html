@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>david this is 4 u 💕</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Patrick+Hand&family=Pacifico&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --pink-bg:   #ffd6e7;
+    --pink-mid:  #ffb3d1;
+    --pink-deep: #ff85b3;
+    --pink-hot:  #ff3d7f;
+    --pink-soft: #ffe4f0;
+    --cream:     #fff8f0;
+    --ink:       #2a1a24;
+    --ink-lt:    #6b3a52;
+    --yellow:    #ffe066;
+    --green:     #b8f0c8;
+  }
+
+  body {
+    background-color: var(--pink-bg);
+    background-image:
+      radial-gradient(circle at 15% 15%, #ffcce4 0%, transparent 45%),
+      radial-gradient(circle at 85% 80%, #ffaac8 0%, transparent 45%),
+      radial-gradient(circle at 55% 40%, #ffe0ef 0%, transparent 38%),
+      url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='1.5' fill='%23ff85b3' fill-opacity='0.09'/%3E%3C/svg%3E");
+    font-family: 'Caveat', cursive;
+    color: var(--ink);
+    min-height: 100vh;
+    overflow-x: hidden;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28'%3E%3Ctext y='24' font-size='22'%3E🌸%3C/text%3E%3C/svg%3E") 14 14, auto;
+  }
+
+  /* notebook lines */
+  body::before {
+    content:'';
+    position:fixed; inset:0;
+    background-image: repeating-linear-gradient(transparent,transparent 31px,rgba(255,133,179,0.13) 31px,rgba(255,133,179,0.13) 32px);
+    pointer-events:none; z-index:0;
+  }
+
+  .bg-doodle {
+    position:fixed; pointer-events:none; z-index:0;
+    opacity:0.1; animation:drift linear infinite;
+    user-select:none;
+  }
+  @keyframes drift {
+    0%   { transform:translateY(0) rotate(0deg); }
+    100% { transform:translateY(-110vh) rotate(360deg); }
+  }
+
+  .page {
+    position:relative; z-index:1;
+    max-width:860px;
+    margin:0 auto;
+    padding:30px 20px 60px;
+  }
+
+  /* HEADER */
+  .header { text-align:center; padding:24px 10px 6px; }
+
+  .header h1 {
+    font-family:'Pacifico',cursive;
+    font-size:clamp(2.4rem,10vw,5rem);
+    color:var(--pink-hot);
+    line-height:1.15;
+    text-shadow:3px 3px 0 rgba(255,61,127,0.18), 6px 6px 0 rgba(255,61,127,0.07);
+    display:inline-block;
+    transform:rotate(-1.2deg);
+  }
+
+  .header .sub {
+    font-size:clamp(1.1rem,3.5vw,1.6rem);
+    color:var(--ink-lt);
+    margin-top:8px;
+    display:inline-block;
+    transform:rotate(0.7deg);
+  }
+
+  .squiggle { width:240px; height:10px; display:block; margin:6px auto; }
+
+  .stickers {
+    display:flex; justify-content:center; flex-wrap:wrap;
+    gap:8px; font-size:1.9rem; margin:14px 0 4px;
+  }
+  .stickers span { display:inline-block; }
+  .stickers span:nth-child(odd)  { animation:tA 2.5s ease-in-out infinite; }
+  .stickers span:nth-child(even) { animation:tB 2.6s ease-in-out infinite; }
+  @keyframes tA { 0%,100%{transform:rotate(-5deg);} 50%{transform:rotate(5deg);} }
+  @keyframes tB { 0%,100%{transform:rotate(4deg);}  50%{transform:rotate(-4deg);} }
+
+  /* TICKER */
+  .ticker-wrap {
+    background:var(--pink-deep);
+    overflow:hidden; white-space:nowrap;
+    padding:9px 0; margin:20px -20px;
+    transform:rotate(-0.4deg);
+    box-shadow:0 3px 10px rgba(255,61,127,0.22);
+  }
+  .ticker {
+    display:inline-block;
+    animation:ticker 22s linear infinite;
+    font-size:1.05rem; color:white;
+    letter-spacing:1px;
+    font-family:'Patrick Hand',sans-serif;
+  }
+  @keyframes ticker { 0%{transform:translateX(100vw);} 100%{transform:translateX(-100%);} }
+
+  /* SECTION HEADING */
+  .sec-h {
+    font-family:'Pacifico',cursive;
+    font-size:clamp(1.5rem,4vw,2.2rem);
+    color:var(--pink-hot);
+    margin:38px 0 14px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .sec-h::after {
+    content:''; flex:1; height:2px;
+    background:repeating-linear-gradient(90deg,var(--pink-deep) 0,var(--pink-deep) 6px,transparent 6px,transparent 12px);
+  }
+
+  /* ROAST CARDS */
+  .roast-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:14px;
+  }
+  .roast-card {
+    background:var(--cream);
+    border:2px solid var(--pink-deep);
+    border-radius:8px;
+    padding:18px 16px 24px;
+    font-size:1.05rem; line-height:1.5;
+    cursor:pointer;
+    box-shadow:3px 4px 0 rgba(255,61,127,0.14);
+    position:relative;
+    transition:transform .15s, box-shadow .15s;
+  }
+  .roast-card:nth-child(odd)  { transform:rotate(-0.7deg); }
+  .roast-card:nth-child(even) { transform:rotate(0.5deg);  }
+  .roast-card:hover { transform:rotate(0deg) scale(1.04) translateY(-3px) !important; box-shadow:5px 7px 0 rgba(255,61,127,0.22); z-index:2; }
+  .roast-card .em { font-size:1.6rem; display:block; margin-bottom:6px; }
+  .roast-card::after {
+    content:''; position:absolute;
+    bottom:8px; left:10px; right:10px; height:5px;
+    background:rgba(255,230,102,.5); border-radius:2px;
+  }
+  /* tape pin */
+  .roast-card::before {
+    content:''; position:absolute;
+    top:-6px; left:50%; transform:translateX(-50%) rotate(-1deg);
+    width:52px; height:12px;
+    background:rgba(255,230,102,.7); border-radius:2px;
+  }
+
+  /* COUNTER */
+  .counter-card {
+    background:var(--pink-soft);
+    border:2px dashed var(--pink-hot);
+    border-radius:14px;
+    padding:24px; text-align:center;
+  }
+  .counter-card .big {
+    font-size:4.5rem; font-weight:700;
+    color:var(--pink-hot); line-height:1;
+    text-shadow:3px 3px 0 rgba(255,61,127,0.18);
+  }
+  .counter-card p { font-size:1.1rem; color:var(--ink-lt); margin-top:6px; }
+  .counter-card .warn {
+    display:inline-block; margin-top:10px;
+    font-size:0.95rem; color:var(--pink-hot);
+    background:var(--yellow); padding:3px 12px;
+    border-radius:20px; transform:rotate(-1deg);
+  }
+
+  /* QUIZ */
+  .quiz-card {
+    background:var(--cream);
+    border:2px solid var(--pink-deep);
+    border-radius:12px; padding:26px;
+    box-shadow:3px 4px 0 rgba(255,133,179,.2);
+  }
+  .quiz-card .qt {
+    font-size:1.25rem; font-weight:700;
+    color:var(--ink); margin-bottom:14px; line-height:1.4;
+  }
+  .quiz-card button {
+    display:block; width:100%;
+    background:var(--pink-soft);
+    border:2px solid var(--pink-mid);
+    border-radius:8px; color:var(--ink);
+    font-family:'Caveat',cursive; font-size:1.1rem;
+    padding:10px 16px; margin-bottom:9px;
+    cursor:pointer; text-align:left;
+    transition:background .15s, transform .1s;
+  }
+  .quiz-card button:hover { background:var(--pink-mid); transform:translateX(4px); }
+  .quiz-card button.correct { background:var(--green); border-color:#5dc878; }
+  .quiz-card button.wrong   { background:#ffd0d0; border-color:#e07070; }
+  .quiz-result { margin-top:10px; font-size:1.15rem; min-height:1.5em; color:var(--ink-lt); font-weight:600; }
+
+  /* WHACK */
+  .game-card {
+    background:var(--pink-soft);
+    border:2px solid var(--pink-deep);
+    border-radius:12px; padding:26px; text-align:center;
+  }
+  .game-card h3 { font-family:'Pacifico',cursive; font-size:1.3rem; color:var(--ink); margin-bottom:10px; }
+  #wam-grid {
+    display:grid; grid-template-columns:repeat(4,1fr);
+    gap:10px; max-width:300px; margin:12px auto;
+  }
+  .wam-cell {
+    background:white; border:2px solid var(--pink-mid);
+    border-radius:50%; height:62px;
+    font-size:1.9rem; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    user-select:none;
+    box-shadow:0 3px 0 var(--pink-mid);
+    transition:transform .1s;
+  }
+  .wam-cell.active { background:var(--pink-soft); border-color:var(--pink-hot); box-shadow:0 3px 0 var(--pink-hot); animation:pop .15s ease; }
+  @keyframes pop { 0%,100%{transform:scale(1);} 50%{transform:scale(1.2);} }
+  #wam-score { font-size:1.5rem; font-weight:700; color:var(--pink-hot); }
+  #wam-timer { font-size:1rem; color:var(--ink-lt); margin-top:3px; }
+  #wam-btn {
+    margin-top:12px; background:var(--pink-hot); color:white;
+    border:none; border-radius:30px;
+    font-family:'Pacifico',cursive; font-size:1rem; padding:10px 28px;
+    cursor:pointer; box-shadow:0 4px 0 rgba(180,0,70,.25);
+    transition:transform .1s, box-shadow .1s;
+  }
+  #wam-btn:hover { transform:translateY(-2px); box-shadow:0 6px 0 rgba(180,0,70,.22); }
+  #wam-btn:active { transform:translateY(2px); box-shadow:0 2px 0 rgba(180,0,70,.22); }
+
+  /* EASTER EGGS */
+  .egg-grid { display:flex; flex-wrap:wrap; gap:11px; }
+  .egg-btn {
+    background:white; border:2px solid var(--pink-deep);
+    border-radius:30px; color:var(--ink);
+    font-family:'Caveat',cursive; font-size:1.1rem;
+    padding:9px 20px; cursor:pointer;
+    box-shadow:2px 3px 0 rgba(255,133,179,.28);
+    transition:transform .1s, box-shadow .1s, background .1s;
+  }
+  .egg-btn:hover { background:var(--pink-soft); transform:translateY(-2px) rotate(-1deg); box-shadow:3px 5px 0 rgba(255,133,179,.38); }
+  .egg-btn:active { transform:translateY(1px); }
+
+  #secret-msg {
+    display:none;
+    background:var(--cream); border:2px dashed var(--pink-hot);
+    border-radius:12px; padding:20px; margin-top:16px;
+    font-size:1.1rem; line-height:1.6; color:var(--ink);
+    position:relative; animation:noteIn .3s ease;
+  }
+  #secret-msg::before {
+    content:''; position:absolute;
+    top:-7px; left:50%; transform:translateX(-50%) rotate(1deg);
+    width:56px; height:13px; background:rgba(255,230,102,.75); border-radius:2px;
+  }
+  @keyframes noteIn { from{opacity:0;transform:translateY(8px) rotate(1deg);} to{opacity:1;transform:none;} }
+
+  /* FLOATERS */
+  .floater {
+    position:fixed; font-size:1.4rem;
+    pointer-events:none;
+    animation:floatUp 1.4s ease forwards; z-index:9998;
+  }
+  @keyframes floatUp {
+    0%  {opacity:1;transform:translateY(0) scale(1) rotate(0deg);}
+    100%{opacity:0;transform:translateY(-110px) scale(1.4) rotate(18deg);}
+  }
+
+  /* JUMPSCARE */
+  #jumpscare {
+    display:none; position:fixed; inset:0; z-index:9999;
+    background:rgba(255,182,213,.9);
+    align-items:center; justify-content:center;
+    flex-direction:column; backdrop-filter:blur(5px);
+  }
+  #jumpscare.show { display:flex; }
+  #jumpscare img {
+    max-width:min(420px,88vw); max-height:72vh;
+    border:6px solid white; border-radius:14px;
+    box-shadow:0 12px 40px rgba(255,61,127,.3);
+    animation:scareIn .18s ease; object-fit:cover;
+  }
+  @keyframes scareIn {
+    0%  {transform:scale(0.12) rotate(-8deg);opacity:0;}
+    100%{transform:scale(1) rotate(0deg);opacity:1;}
+  }
+  .scare-label {
+    margin-top:16px; font-family:'Pacifico',cursive;
+    font-size:clamp(1.4rem,5vw,2.4rem); color:var(--pink-hot);
+    text-shadow:2px 2px 0 white;
+    animation:bb .4s ease infinite alternate;
+  }
+  @keyframes bb { to{transform:scale(1.05) rotate(-1deg);} }
+  .close-hint { margin-top:8px; font-size:.9rem; color:var(--ink-lt); font-family:'Patrick Hand',sans-serif; }
+
+  /* KONAMI */
+  #konami-msg {
+    display:none; position:fixed; inset:0; z-index:10000;
+    background:var(--pink-bg);
+    align-items:center; justify-content:center;
+    flex-direction:column; text-align:center; padding:30px;
+  }
+  #konami-msg.show { display:flex; }
+  #konami-msg h2 { font-family:'Pacifico',cursive; font-size:2.8rem; color:var(--pink-hot); }
+  #konami-msg p  { font-size:1.4rem; margin-top:14px; color:var(--ink); max-width:480px; }
+  #konami-msg small { margin-top:20px; color:var(--ink-lt); }
+
+  @keyframes shake {
+    0%,100%{transform:translate(0);}
+    20%{transform:translate(-6px,5px);}
+    40%{transform:translate(6px,-4px);}
+    60%{transform:translate(-4px,3px);}
+    80%{transform:translate(5px,-3px);}
+  }
+
+  .divider {
+    height:2px; border:none;
+    background:repeating-linear-gradient(90deg,var(--pink-mid) 0,var(--pink-mid) 8px,transparent 8px,transparent 16px);
+    margin:36px 0; border-radius:2px;
+  }
+
+  footer {
+    text-align:center; padding:28px 20px 18px;
+    font-family:'Patrick Hand',sans-serif;
+    font-size:.9rem; color:var(--ink-lt);
+    position:relative; z-index:1;
+  }
+  footer span { background:var(--yellow); padding:2px 8px; border-radius:4px; }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="header">
+    <h1>david: this is 4 u 💕</h1>
+    <svg class="squiggle" viewBox="0 0 240 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 5 Q16 1 28 5 Q40 9 52 5 Q64 1 76 5 Q88 9 100 5 Q112 1 124 5 Q136 9 148 5 Q160 1 172 5 Q184 9 196 5 Q208 1 220 5 Q232 9 238 5" stroke="#ff85b3" stroke-width="2.2" stroke-linecap="round"/>
+    </svg>
+    <p class="sub">✍️ you got no style and no class girl jump 💅</p>
+    <div class="stickers"><span>💀</span><span>💅</span><span>👑</span><span>🚨</span><span>💅</span><span>💀</span></div>
+  </div>
+
+  <div class="ticker-wrap">
+    <span class="ticker">💕 DAVID WATCH OUT 💕 &nbsp;&nbsp;&nbsp; 🚨 JUMPSCARE WARNING 🚨 &nbsp;&nbsp;&nbsp; 💅 no style no class 💅 &nbsp;&nbsp;&nbsp; 🎯 click something i dare u 🎯 &nbsp;&nbsp;&nbsp; 👻 easter eggs everywhere 👻 &nbsp;&nbsp;&nbsp; 💕 DAVID WATCH OUT 💕</span>
+  </div>
+
+  <p class="sec-h">📋 the roast board</p>
+  <div class="roast-grid">
+    <div class="roast-card" onclick="handleClick(event)"><span class="em">💅</span>david showed up to the party and the vibe left immediately lmao</div>
+    <div class="roast-card" onclick="handleClick(event)"><span class="em">🕺</span>his dance moves are genuinely a cry for help pls</div>
+    <div class="roast-card" onclick="handleClick(event)"><span class="em">👗</span>even the charity shop said nah to his outfits bestie</div>
+    <div class="roast-card" onclick="handleClick(event)"><span class="em">🧠</span>his haircut told me more about him than he ever could tbh</div>
+    <div class="roast-card" onclick="handleClick(event)"><span class="em">☕</span>his personality is literally decaf. nobody asked for it.</div>
+    <div class="roast-card" onclick="handleClick(event)"><span class="em">📱</span>npc mode: activated. always. 💀</div>
+  </div>
+
+  <hr class="divider">
+
+  <p class="sec-h">💥 david cry counter</p>
+  <div class="counter-card">
+    <div class="big" id="click-count">0</div>
+    <p>times we clicked david (he cried <strong id="cry-count">0</strong> times)</p>
+    <p class="warn">⚠️ keep clicking... something scary will happen...</p>
+  </div>
+
+  <hr class="divider">
+
+  <p class="sec-h">🎓 how well do u know david?</p>
+  <div class="quiz-card">
+    <p class="qt" id="quiz-q">loading...</p>
+    <div id="quiz-opts"></div>
+    <p class="quiz-result" id="quiz-result"></p>
+  </div>
+
+  <hr class="divider">
+
+  <p class="sec-h">🔨 whack-a-david!!</p>
+  <div class="game-card">
+    <h3>smash him every time he pops up 😤</h3>
+    <div id="wam-grid"></div>
+    <p id="wam-score">Score: 0</p>
+    <p id="wam-timer">Time: 20s</p>
+    <button id="wam-btn" onclick="startWAM()">start game!</button>
+  </div>
+
+  <hr class="divider">
+
+  <p class="sec-h">🥚 secret easter eggs</p>
+  <div class="egg-grid">
+    <button class="egg-btn" onclick="handleClick(event);easterEgg1()">🎵 david's anthem</button>
+    <button class="egg-btn" onclick="handleClick(event);easterEgg2()">🔮 ask the oracle</button>
+    <button class="egg-btn" onclick="handleClick(event);easterEgg3()">📓 his secret diary</button>
+    <button class="egg-btn" onclick="handleClick(event);easterEgg4()">🪞 the mirror moment</button>
+    <button class="egg-btn" onclick="handleClick(event);easterEgg5()">🎲 random roast</button>
+    <button class="egg-btn" onclick="handleClick(event);easterEgg6()">🕵️ secret code</button>
+  </div>
+  <div id="secret-msg"></div>
+
+</div>
+
+<footer>
+  made w/ 💖 just 4 david &nbsp;|&nbsp; <span>konami code: ↑↑↓↓←→←→BA</span>
+</footer>
+
+<!-- JUMPSCARE -->
+<div id="jumpscare" onclick="closeJumpscare()">
+  <img id="scare-img" src="" alt="BOO">
+  <p class="scare-label" id="scare-text">BOO!! 👻</p>
+  <p class="close-hint">(tap anywhere to close 😌)</p>
+</div>
+
+<!-- KONAMI -->
+<div id="konami-msg" onclick="this.classList.remove('show')">
+  <h2>🎊 u found it!!! 🎊</h2>
+  <p>david: forever the main character of someone else's joke 💕</p>
+  <small>(tap to close)</small>
+</div>
+
+<script>
+// bg doodles
+['🌸','💕','✨','🌷','💖','🦋','🌺','💗','⭐','🌸'].forEach(e=>{
+  const el=document.createElement('div');
+  el.className='bg-doodle'; el.textContent=e;
+  el.style.cssText=`left:${Math.random()*95}%;top:${Math.random()*100+100}%;animation-duration:${12+Math.random()*18}s;animation-delay:${-Math.random()*20}s;font-size:${2+Math.random()*2}rem;`;
+  document.body.appendChild(el);
+});
+
+// CLICK + JUMPSCARE
+let clickCount=0, jumpThreshold=Math.floor(Math.random()*5)+6;
+const scareImgs=[
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/European_Common_Frog_Rana_temporaria.jpg/1280px-European_Common_Frog_Rana_temporaria.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Camponotus_flavomarginatus_ant.jpg/1280px-Camponotus_flavomarginatus_ant.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Dog_Breeds.jpg/1280px-Dog_Breeds.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Cute_dog.jpg/1200px-Cute_dog.jpg',
+];
+const scareTxts=["AHHH it's david!! 😱","who let him in?! 😱","no style!! no class!! 💀","LOOK AT THIS GUY 👻","RUN!!! 🚨"];
+
+function handleClick(e){
+  clickCount++;
+  document.getElementById('click-count').textContent=clickCount;
+  document.getElementById('cry-count').textContent=Math.floor(clickCount*.7);
+  spawnFloater(e.clientX||300,e.clientY||300);
+  if(clickCount>=jumpThreshold){ triggerJumpscare(); jumpThreshold+=Math.floor(Math.random()*5)+4; }
+}
+
+function triggerJumpscare(){
+  document.getElementById('scare-img').src=scareImgs[Math.floor(Math.random()*scareImgs.length)];
+  document.getElementById('scare-text').textContent=scareTxts[Math.floor(Math.random()*scareTxts.length)];
+  document.getElementById('jumpscare').classList.add('show');
+  document.body.style.animation='shake .35s ease';
+  setTimeout(()=>document.body.style.animation='',400);
+}
+function closeJumpscare(){ document.getElementById('jumpscare').classList.remove('show'); }
+
+function spawnFloater(x,y){
+  const emojis=['💕','💅','✨','🌸','💀','👑','🔥','🌷','💖','⭐'];
+  const el=document.createElement('span');
+  el.className='floater'; el.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+  el.style.left=(x-12)+'px'; el.style.top=(y-20)+'px';
+  document.body.appendChild(el); setTimeout(()=>el.remove(),1500);
+}
+document.addEventListener('mousemove',e=>{ if(Math.random()>.96) spawnFloater(e.clientX,e.clientY); });
+
+// QUIZ
+const qs=[
+  {q:"what is david's most defining quality??",opts:["incredible style fr","zero vibes whatsoever","being totally iconic","great fashion sense"],ans:1,fb:["WRONG bestie 💅","CORRECT!! zero vibes confirmed 🎉","lmaooo no 💀","have u MET david?? 😭"]},
+  {q:"david walks into a room. what happens?",opts:["everyone cheers omg","the music stops","the vibe literally leaves","nothing, he's invisible"],ans:2,fb:["haha no 💀","close but not quite 👀","YESSS the vibe LEAVES 🎊","actually true but that's worse 😭"]},
+  {q:"what is david's fashion icon?",opts:["gucci i think","a confused bin bag","himself (delusional)","a scared scarecrow"],ans:3,fb:["gucci would sue 💀","actually generous tbh 😭","DELUSION is his superpower 😂","CORRECT!! a scared scarecrow with no mirrors 🎊"]},
+  {q:"how much style does david have on a scale of 1-10?",opts:["-4 maybe","0 at best","negative infinity","he's too iconic to measure"],ans:2,fb:["still too generous!","still too high tbh 💀","CORRECT!! negative infinity!! 🎊","sir this is a roast 😭"]},
+];
+let cQ=0;
+function loadQ(){
+  const q=qs[cQ%qs.length];
+  document.getElementById('quiz-q').textContent=`Q${(cQ%qs.length)+1}: ${q.q}`;
+  const opts=document.getElementById('quiz-opts'); opts.innerHTML='';
+  document.getElementById('quiz-result').textContent='';
+  q.opts.forEach((o,i)=>{
+    const btn=document.createElement('button'); btn.textContent=o;
+    btn.onclick=()=>{
+      handleClick({clientX:400,clientY:400});
+      opts.querySelectorAll('button').forEach(b=>b.disabled=true);
+      btn.classList.add(i===q.ans?'correct':'wrong');
+      opts.querySelectorAll('button')[q.ans].classList.add('correct');
+      document.getElementById('quiz-result').textContent=q.fb[i];
+      setTimeout(()=>{cQ++;loadQ();},2000);
+    };
+    opts.appendChild(btn);
+  });
+}
+loadQ();
+
+// WHACK-A-DAVID
+const wGrid=document.getElementById('wam-grid');
+let wScore=0,wTimer=0,wInt=null,wGInt=null,wActive=false;
+for(let i=0;i<16;i++){
+  const c=document.createElement('div'); c.className='wam-cell'; c.textContent='🌸';
+  c.onclick=()=>{
+    if(!wActive||!c.classList.contains('active')) return;
+    c.textContent='💥'; c.classList.remove('active'); wScore++;
+    document.getElementById('wam-score').textContent=`Score: ${wScore}`;
+    setTimeout(()=>{c.textContent='🌸';},200);
+    handleClick({clientX:300,clientY:300});
+  };
+  wGrid.appendChild(c);
+}
+function startWAM(){
+  if(wActive) return;
+  wScore=0;wTimer=20;wActive=true;
+  document.getElementById('wam-score').textContent='Score: 0';
+  document.getElementById('wam-btn').textContent='playing...';
+  document.getElementById('wam-btn').disabled=true;
+  wInt=setInterval(()=>{
+    const cs=wGrid.querySelectorAll('.wam-cell');
+    cs.forEach(c=>{c.classList.remove('active');c.textContent='🌸';});
+    const n=Math.min(Math.floor((20-wTimer)/5)+1,4),p=new Set();
+    while(p.size<n) p.add(Math.floor(Math.random()*16));
+    p.forEach(i=>{cs[i].classList.add('active');cs[i].textContent='😤';});
+  },800);
+  wGInt=setInterval(()=>{
+    wTimer--; document.getElementById('wam-timer').textContent=`Time: ${wTimer}s`;
+    if(wTimer<=0){
+      clearInterval(wInt);clearInterval(wGInt);wActive=false;
+      wGrid.querySelectorAll('.wam-cell').forEach(c=>{c.classList.remove('active');c.textContent='🌸';});
+      document.getElementById('wam-btn').textContent='play again!';
+      document.getElementById('wam-btn').disabled=false;
+      const m=wScore>=15?'🏆 LEGENDARY!':wScore>=10?'🔥 amazing!!':wScore>=5?'👍 not bad':'💀 david survived smh';
+      document.getElementById('wam-timer').textContent=`FINAL: ${wScore} — ${m}`;
+    }
+  },1000);
+}
+
+// EASTER EGGS
+const diary=["dear diary, tried a new outfit today. three people left the country. they were probably just jealous.","dear diary, did my signature move at the party. the DJ stopped the music. 'emergency' apparently. coincidence.","dear diary, asked my mirror if i looked good. it cracked. clearly overwhelmed by my aura.","dear diary, someone said i have no class. i said 'correction: negative class.' i think they were complimenting me.","dear diary, i woke up and chose chaos today. chaos filed a restraining order."];
+const oracle=["the oracle sees... zero style in ur future, david.","signs point to: still no class bestie.","the spirits say: u were the vibe killer all along 💀","outlook: bleak. specifically for david.","the oracle is laughing and won't stop 😭","ur destiny: main character of a roast page forever 💕"];
+const roasts=["david's personality is on airplane mode and has been since birth 💀","david walked into Zara and Zara walked out.","even david's reflection sighs when he looks in the mirror.","david's fashion sense is historical. historically terrible.","scientists found david's vibe is a black hole for good energy.","david said 'dress to impress'. everyone got scared and left."];
+
+function showS(h){ const e=document.getElementById('secret-msg'); e.style.display='block'; e.innerHTML=h; }
+function easterEgg1(){
+  try{
+    const ac=new AudioContext();
+    [440,330,220,280,330,220,180,220].forEach((f,i)=>{
+      const o=ac.createOscillator(),g=ac.createGain();
+      o.connect(g);g.connect(ac.destination);o.frequency.value=f;o.type='square';
+      g.gain.setValueAtTime(.08,ac.currentTime+i*.18);
+      g.gain.exponentialRampToValueAtTime(.001,ac.currentTime+i*.18+.17);
+      o.start(ac.currentTime+i*.18);o.stop(ac.currentTime+i*.18+.18);
+    });
+  }catch(e){}
+  showS('🎵 <em>"no style no class (the david anthem)"</em> — now playing!!\n<small>♩ he walked in with confidence ♩ the vibe immediately left ♩</small>');
+}
+function easterEgg2(){ showS(`🔮 THE ORACLE SPEAKS:<br><br><em>"${oracle[Math.floor(Math.random()*oracle.length)]}"</em>`); }
+function easterEgg3(){ showS(`📓 <em>a page from david's secret diary:</em><br><br>"${diary[Math.floor(Math.random()*diary.length)]}"`); }
+function easterEgg4(){
+  const r=["the mirror shattered immediately 💀","the mirror filed for emotional damages 😭","ur reflection said 'please... no more' 🙏","ERROR 404: style not found 🪞","the mirror said 'i quit' and turned itself off ✌️"][Math.floor(Math.random()*5)];
+  showS(`🪞 david looks in the mirror...<br><br>${r}`);
+}
+function easterEgg5(){ showS(`🎲 <strong>random roast:</strong><br><br>${roasts[Math.floor(Math.random()*roasts.length)]}`); }
+function easterEgg6(){ showS(`🕵️ SECRET CODE UNLOCKED!!<br><br>the code is: <strong style="color:#ff3d7f">DAVID-HAS-NO-DRIP-2024</strong><br><small>use it for... absolutely nothing. classic david energy 💕</small>`); }
+
+// KONAMI
+const kon=['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+let ki=0;
+document.addEventListener('keydown',e=>{ if(e.key===kon[ki]){ki++;if(ki===kon.length){document.getElementById('konami-msg').classList.add('show');ki=0;for(let i=0;i<28;i++)spawnFloater(Math.random()*window.innerWidth,Math.random()*window.innerHeight);}}else ki=0; });
+
+// RANDOM TIMED JUMPSCARES
+function scheduleRandom(){ setTimeout(()=>{triggerJumpscare();scheduleRandom();},Math.random()*25000+15000); }
+scheduleRandom();
+</script>
+</body>
+</html>
